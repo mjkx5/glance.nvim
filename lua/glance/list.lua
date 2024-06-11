@@ -364,6 +364,10 @@ local function process_locations(locations, position_params, offset_encoding)
     end
   end
 
+  table.sort(result, function(a, b)
+    return a.filename < b.filename
+  end)
+
   return result
 end
 
